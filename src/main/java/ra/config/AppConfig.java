@@ -36,8 +36,6 @@ import java.util.Properties;
 @ComponentScan(basePackages = {"ra.controller","ra.model"})
 @EnableJpaRepositories("ra.model.repository")
 public class AppConfig implements WebMvcConfigurer, ApplicationContextAware {
-    private String pathImage = "C:\\Users\\hung1\\DemoLogin\\hibernate-Orm\\src\\main\\webapp\\WEB-INF\\upload\\";
-    // cấu hình appllication Context
     private ApplicationContext applicationContext;
 
     @Override
@@ -78,12 +76,6 @@ public class AppConfig implements WebMvcConfigurer, ApplicationContextAware {
         return resolver;
     }
 
-    // cấu hình đường dẫn
-    @Override
-    public void addResourceHandlers(ResourceHandlerRegistry registry) {
-        registry.addResourceHandler("/upload/**")
-                .addResourceLocations("file:"+pathImage);
-    }
     // cấu hình entityManager
     @Bean
     @Qualifier(value = "entityManager")
@@ -110,7 +102,7 @@ public class AppConfig implements WebMvcConfigurer, ApplicationContextAware {
         dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
         dataSource.setUrl("jdbc:mysql://localhost:3306/user_crud");
         dataSource.setUsername("root");
-        dataSource.setPassword("18061999");
+        dataSource.setPassword("matkhau102");
         return dataSource;
     }
 // cấu hình transaction

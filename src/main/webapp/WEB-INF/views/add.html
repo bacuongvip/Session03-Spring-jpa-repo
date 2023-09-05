@@ -5,8 +5,14 @@
     <title>Title</title>
 </head>
 <body>
-<form action="/add" th:object="${todo}" method="post">
-    <input type="text" th:field="*{content}">
+<form action="/add" th:object="${user}" method="post">
+    <input type="text" th:field="*{fullName}">
+    <input type="text" th:field="*{username}">
+    <input type="text" th:field="*{password}">
+    <select th:field="*{status}">
+        <option th:value="true">1</option>
+        <option th:value="false">0</option>
+    </select>
     <input type="submit" value="Add">
 </form>
 </body>
